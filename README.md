@@ -1,4 +1,4 @@
-### ✅ Step 1: Download the Script File
+### Step 1: Download the Script File
 
 1. Go to the GitHub page (you're already here)
 2. Find the file called `Monitor-Folders.ps1`
@@ -8,7 +8,7 @@
 
 ---
 
-### ✅ Step 2: Find the Folder You Want to Watch
+### Step 2: Find the Folder You Want to Watch
 
 1. Open **File Explorer**
 2. Navigate to the folder you want to keep an eye on
@@ -22,7 +22,7 @@ C:\Users\YourName\Documents\MyFolder
 
 ---
 
-### ✅ Step 3: Run the Script
+### Step 3: Run the Script
 
 1. Click your **Start Menu**
 2. Type `powershell`
@@ -30,7 +30,7 @@ C:\Users\YourName\Documents\MyFolder
 
 ---
 
-### 🛠️ Get PowerShell ready to run scripts
+### Get PowerShell ready to run scripts
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -47,7 +47,7 @@ And press **Enter** again.
 
 ---
 
-### 📁 Go to the folder where you saved the script
+### Go to the folder where you saved the script
 
 If you saved the script in your Downloads folder:
 
@@ -63,7 +63,7 @@ cd "C:\Path\To\Where\You\Saved\The\Script"
 
 ---
 
-### 👀 Run the script and tell it what folder to watch
+### Run the script and tell it what folder to watch
 
 ```powershell
 .\Monitor-Folders.ps1 -RootPath "C:\Path\To\Folder\You\Want\To\Watch"
@@ -71,17 +71,17 @@ cd "C:\Path\To\Where\You\Saved\The\Script"
 
 ---
 
-### 💡 Example
+### Example
 
 Let’s say:
 - You saved the script in:  
-  `C:\Users\Sarah\Desktop`
+  `C:\Users\YourName\Desktop`
 - You want to watch:  
-  `C:\Users\Sarah\Documents\Projects`
+  `C:\Users\YourName\Documents\Projects`
 
 Then you’d run:
 
 ```powershell
-cd "C:\Users\Sarah\Desktop"
-.\Monitor-Folders.ps1 -RootPath "C:\Users\Sarah\Documents\Projects"
+cd "C:\Users\YourName\Desktop"
+.\Monitor-Folders.ps1 -RootPath "C:\Users\YourName\Documents\Projects"
 ```
