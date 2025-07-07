@@ -1,85 +1,87 @@
-# 📁 DirectoryMonitor — Super Simple Folder Watcher
-
-This is a PowerShell script that watches a folder on your computer and tells you when someone creates a new folder inside it.
-
----
-
-## 🧠 What This Is
-
-Imagine you want to keep an eye on a folder — like your **Documents** — and want to know if **any new folders or subfolders** are added. This tool does that.
-
-You don’t need to know how to code or install anything fancy.
-
----
-
-## 🚀 How to Use This (No Tech Knowledge Needed)
-
 ### ✅ Step 1: Download the Script File
 
-1. Go to the GitHub page here: https://github.com/TevansZAP/DirectoryMonitor
+1. Go to the GitHub page (you're already here)
 2. Find the file called `Monitor-Folders.ps1`
-3. Click the file, then click the **Download raw** button or the **Download ZIP** (then unzip it)
+3. Click the file, then click the **Raw** button
+4. Right-click anywhere on the page and choose **Save As...**
+5. Save the file somewhere you can find it (like your **Downloads** or **Desktop**)
 
 ---
 
 ### ✅ Step 2: Find the Folder You Want to Watch
 
 1. Open **File Explorer**
-2. Navigate to the folder you want to monitor (like `Documents`)
-3. Click in the top bar of the window (where the folder path is), it will turn into something like this:
-   ```
-   C:\Users\YourName\Documents
-   ```
-4. **Right-click and choose Copy** — this is the path you’ll use in the next step.
+2. Navigate to the folder you want to keep an eye on
+3. At the top of the window, click the white space in the address bar — it will turn into something like:
+
+```text
+C:\Users\YourName\Documents\MyFolder
+```
+
+4. Right-click that path and choose **Copy**
 
 ---
 
 ### ✅ Step 3: Run the Script
 
-1. Click the Windows Start Menu
+1. Click your **Start Menu**
 2. Type `powershell`
-3. **Right-click** on "Windows PowerShell" and choose **Run as Administrator**
-4. In PowerShell, type this (but **paste your folder path** in place of mine):
-
-   ```powershell
-   Set-ExecutionPolicy RemoteSigned
-   ```
-
-   Press `Y` if asked.
-
-5. Next, go to where you saved the script — like your Downloads folder:
-
-   ```powershell
-   cd "C:\Users\YourName\Downloads"
-   ```
-
-6. Run the script like this:
-
-   ```powershell
-   .\Monitor-Folders.ps1 -RootPath "C:\Users\YourName\Documents"
-   ```
+3. **Right-click** on **Windows PowerShell** and choose **Run as Administrator**
 
 ---
 
-## 📂 What Happens When You Run It?
+### 🛠️ Get PowerShell ready to run scripts
 
-- It will show you all the folders it sees right now.
-- If it finds any **new folders** since last time, it will list them.
-- It will save this info in 2 files:
-  - `snapshot.json` (what it saw)
-  - `new_directories.json` (new ones it found)
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
 
-You don’t need to open or touch these files. Just run the script again later, and it’ll tell you what’s new.
+Then press **Enter**.  
+If it asks you anything, type:
+
+```powershell
+Y
+```
+
+And press **Enter** again.
 
 ---
 
-## 🧼 How to Stop Using It
+### 📁 Go to the folder where you saved the script
 
-Just delete the file `Monitor-Folders.ps1` and the `.json` files if you don’t want them anymore. That’s it.
+If you saved the script in your Downloads folder:
+
+```powershell
+cd "C:\Users\YourName\Downloads"
+```
+
+Or change the path to wherever you saved the script:
+
+```powershell
+cd "C:\Path\To\Where\You\Saved\The\Script"
+```
 
 ---
 
-## ❓ Still Confused?
+### 👀 Run the script and tell it what folder to watch
 
-Open an issue on the GitHub page, or ask someone to help you copy/paste the path and run PowerShell. It only takes 2 minutes.
+```powershell
+.\Monitor-Folders.ps1 -RootPath "C:\Path\To\Folder\You\Want\To\Watch"
+```
 
+---
+
+### 💡 Example
+
+Let’s say:
+- You saved the script in:  
+  `C:\Users\Sarah\Desktop`
+- You want to watch:  
+  `C:\Users\Sarah\Documents\Projects`
+
+Then you’d run:
+
+```powershell
+cd "C:\Users\Sarah\Desktop"
+.\Monitor-Folders.ps1 -RootPath "C:\Users\Sarah\Documents\Projects"
+```
